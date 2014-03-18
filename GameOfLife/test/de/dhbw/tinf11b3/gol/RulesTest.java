@@ -35,6 +35,7 @@ public class RulesTest {
 	@Test
 	public void isolation() throws Exception {
 		assertFalse("no death by isolation", new Rules().nextStateOf(true, 0));
+		assertFalse("no death by isolation", new Rules().nextStateOf(true, 1));
 	}
 
 	@Test
@@ -51,6 +52,34 @@ public class RulesTest {
 	public void overcrowding() throws Exception {
 		assertFalse("no overcrowding",
 				new Rules().nextStateOf(true, 4));
+		assertFalse("no overcrowding",
+				new Rules().nextStateOf(true, 5));
+		assertFalse("no overcrowding",
+				new Rules().nextStateOf(true, 6));
+		assertFalse("no overcrowding",
+				new Rules().nextStateOf(true, 7));
+		assertFalse("no overcrowding",
+				new Rules().nextStateOf(true, 8));
+	}
+	
+	@Test
+	public void noZombies() throws Exception {
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 2));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 0));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 1));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 4));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 5));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 6));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 7));
+		assertFalse("no zombies in here",
+				new Rules().nextStateOf(false, 8));
 	}
 	
 }
