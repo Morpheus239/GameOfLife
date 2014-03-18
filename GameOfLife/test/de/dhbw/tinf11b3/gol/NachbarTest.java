@@ -29,7 +29,7 @@ public class NachbarTest {
 	@Test
 	public void belebeSpieler() throws Exception{
 		
-		Spielfeld spielfeld = new Spielfeld();
+		Spielfeld spielfeld = new Spielfeld(5, 5);
 		spielfeld.setAlive(0,0);
 		
 		assertTrue("player is not alive", spielfeld.isAlive(0,0));
