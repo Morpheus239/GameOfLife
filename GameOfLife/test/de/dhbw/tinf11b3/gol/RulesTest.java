@@ -32,4 +32,25 @@ public class RulesTest {
 		assertTrue("nothing was born", nextState);
 	}
 
+	@Test
+	public void isolation() throws Exception {
+		assertFalse("no death by isolation", new Rules().nextStateOf(true, 0));
+	}
+
+	@Test
+	public void continuation() throws Exception {
+		assertTrue("no continuation", 
+				new Rules().nextStateOf(true, 2));
+		
+		assertTrue("no continuation", 
+				new Rules().nextStateOf(true, 3));
+	
+	}
+
+	@Test
+	public void overcrowding() throws Exception {
+		assertFalse("no overcrowding",
+				new Rules().nextStateOf(true, 4));
+	}
+	
 }
