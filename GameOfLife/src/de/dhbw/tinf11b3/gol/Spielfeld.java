@@ -16,4 +16,9 @@ public class Spielfeld {
 		return spielfeld[j][i];
 	}
 
+	public Integer zaehleNachbarn(int i, int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
